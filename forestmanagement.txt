@@ -1,0 +1,14 @@
+//1. contractordetails --------------->  (table)
+
+CREATE TABLE contractordetails (
+contractno INT(6) UNIQUE NOT NULL PRIMARY KEY,
+customerid INT(6) UNIQUE NOT NULL,
+productid  INT(6) UNIQUE NOT NULL,
+haulierid  INT(6) UNIQUE NOT NULL,
+deliverydate VARCHAR(20) NOT NULL,
+deliveryday VARCHAR(20) NOT NULL,
+quantity VARCHAR(20) NOT NULL
+);
+
+//2.                   ----------------> (table)
+
