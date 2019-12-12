@@ -1,7 +1,0 @@
-insert into users_info values(1,'Omkar Naik','omkarnaik571@gmail.com','bam_bhole')
-insert into users_info values(2,'Biswajit','biswajitsahoo@gmail.com','jai_jagannath')
-insert into users_info values(3,'Vickey Hota','vickeyhota@gmail.com','interface@123')
-insert into users_info values(4,'Santosh Marandi','santoshmarandi@gmail.com','iphone7plus')
-insert into users_info values(5,'Sunil Biradar','sunilbiradar@gmail.com','jaimaharatha')
-
-select * from users_info;
