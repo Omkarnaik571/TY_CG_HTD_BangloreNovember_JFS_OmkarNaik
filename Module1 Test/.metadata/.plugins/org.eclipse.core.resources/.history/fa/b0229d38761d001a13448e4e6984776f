@@ -1,0 +1,20 @@
+package com.capgemini.module1usecase.dao;
+
+import com.capgemini.module1usecase.dto.ContactDto;
+
+public class Validations {
+
+	public static int checkNumber(int number) {
+		String str=String.valueOf(number);
+		if(str.length()<10) {
+			System.out.println("The number that you have entered is less than 10 digit..");
+		}
+		
+		
+	
+		return 0;
+	}
+	
+	
+	
+}

@@ -1,0 +1,25 @@
+package com.capgemini.module1usecase.dao;
+
+import com.capgemini.module1usecase.dto.ContactDto;
+import com.capgemini.moduleusecase1.factory.FactoryClass;
+
+public class Validations {
+
+	public static int checkNumber(int number) {
+		String str=String.valueOf(number);
+		if(str.length()>=10) {
+			System.out.println("\nThe number that you have entered is more than 10 digit..");
+			System.out.println("\nEnter the number correctly..");
+			System.out.println("\nEnter the User Details Properly again:");
+			ContactDaoImpl cdi=FactoryClass.getContactDaoObject();
+			cdi.addContact();
+		}
+		else {
+			return 1;
+		}
+		return 1;
+	}
+	
+	
+	
+}

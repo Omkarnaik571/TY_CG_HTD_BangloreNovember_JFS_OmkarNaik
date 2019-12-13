@@ -1,0 +1,17 @@
+package com.capgemini.module1usecase.dao;
+
+import com.capgemini.module1usecase.dto.ContactDto;
+
+public class Validations {
+
+	public int checkNumber(ContactDto number) {
+		
+		
+		
+		
+		return 0;
+	}
+	
+	
+	
+}

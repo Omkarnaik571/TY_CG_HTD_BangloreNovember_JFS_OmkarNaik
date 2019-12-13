@@ -1,0 +1,75 @@
+package com.capgemini.module1usecase.dao;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Properties;
+
+import com.capgemini.module1usecase.dto.ContactDto;
+import com.capgemini.moduleusecase1.factory.FactoryClass;
+
+public class ContactDaoImpl  implements ContactDao{
+     FileReader reader=null;
+     Properties prop=null;
+     ContactDto cdt=FactoryClass.getContactDtoObject(); 	
+	
+
+	//1.
+	@Override
+	public void addContact() {
+		try {
+			reader=new FileReader("data.properties");
+		    prop=new Properties();
+		    prop.load(reader);
+		
+		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+	}
+    //1. Add contact end
+	
+	
+	//2.
+	@Override
+	public void deleteContact() {
+		
+		
+	}
+	//2. delete contact end
+
+	
+	
+	//3.
+	@Override
+	public void modifyContact() {
+		
+		
+	}
+	//3. modify contact end
+
+	
+	//4.
+	@Override
+	public void searchContact() {
+		
+		
+	}
+    //4. search contact end
+	
+	
+	
+	//5.
+	@Override
+	public void viewAllContact() {
+		
+		
+	}
+     //5. view all contact end
+	
+	
+}

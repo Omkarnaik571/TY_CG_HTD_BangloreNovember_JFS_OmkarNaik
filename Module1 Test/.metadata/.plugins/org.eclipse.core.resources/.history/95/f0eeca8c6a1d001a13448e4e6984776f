@@ -1,0 +1,104 @@
+package com.capgemini.module1usecase.dao;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Properties;
+import java.util.Scanner;
+
+import com.capgemini.module1usecase.dto.ContactDto;
+import com.capgemini.moduleusecase1.factory.FactoryClass;
+import com.mysql.jdbc.Connection;
+
+public class ContactDaoImpl  implements ContactDao{
+     FileReader reader=null;
+     Properties prop=null;
+     ContactDto cdt=FactoryClass.getContactDtoObject(); 	
+	
+
+	//1.
+	@Override
+	public int addContact() {
+		Scanner sc=new Scanner(System.in);
+		try {
+			reader=new FileReader("data.properties");
+		    prop=new Properties();
+		    prop.load(reader);
+		//Jdbc steps
+		//1.
+		Class.forName("com.mysql.jdbc.Driver");
+		System.out.println("Driver is loaded..");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try(java.sql.Connection conn=DriverManager.getConnection(prop.getProperty("dburl"),prop.getProperty("username"),prop.getProperty("password"));
+			PreparedStatement stmt=conn.prepareStatement("insert")	
+				
+				){
+			System.out.println("Connection is made");
+			System.out.println("Enter the Name:");
+			stmt.setString(1,sc.nextLine() );
+			System.out.println("Enter the Number:");
+			stmt.setInt(2, Integer.parseInt(sc.nextLine()));
+			System.out.println("Enter the Group Type:");
+			stmt.setString(3, sc.nextLine());
+			
+			int result=stmt.executeUpdate();
+			
+			return result;
+			
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+		
+		
+		
+		
+	}
+    //1. Add contact end
+	
+	
+	//2.
+	@Override
+	public void deleteContact() {
+		
+		
+	}
+	//2. delete contact end
+
+	
+	
+	//3.
+	@Override
+	public void modifyContact() {
+		
+		
+	}
+	//3. modify contact end
+
+	
+	//4.
+	@Override
+	public void searchContact() {
+		
+		
+	}
+    //4. search contact end
+	
+	
+	
+	//5.
+	@Override
+	public void viewAllContact() {
+		
+		
+	}
+     //5. view all contact end
+	
+	
+}

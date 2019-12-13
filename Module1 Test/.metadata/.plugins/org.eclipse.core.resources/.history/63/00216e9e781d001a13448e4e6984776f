@@ -1,0 +1,63 @@
+package com.capgemini.module1usecase.dto;
+
+public class ContactDto {
+private String name;
+private int number;
+private String groupn;
+private long phonenumber;
+
+
+public String getName() {
+	return name;
+}
+
+
+public void setName(String name) {
+	this.name = name;
+}
+
+
+public int getNumber() {
+	return number;
+}
+
+public void setNumber(int number) {
+	this.number = number;
+}
+
+
+public String getGroupn() {
+	return groupn;
+}
+
+public void setGroupn(String groupn) {
+	this.groupn = groupn;
+}
+
+
+public long getPhonenumber() {
+	return phonenumber;
+}
+
+
+public void setPhonenumber(long phonenumber) {
+	this.phonenumber = phonenumber;
+}
+
+
+
+
+
+
+
+@Override
+public String toString() {
+	return "Name : " + name + "\nNumber : " + number + "\nGroupn : " + groupn;
+}
+
+
+	
+	
+	
+	
+}

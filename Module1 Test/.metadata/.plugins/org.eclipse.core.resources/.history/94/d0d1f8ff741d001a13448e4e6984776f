@@ -1,0 +1,5 @@
+package com.capgemini.module1usecase.dao;
+
+public class Validations {
+
+}

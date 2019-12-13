@@ -1,0 +1,5 @@
+package com.capgemini.module1usecase.dto;
+
+public class ContactDto {
+
+}

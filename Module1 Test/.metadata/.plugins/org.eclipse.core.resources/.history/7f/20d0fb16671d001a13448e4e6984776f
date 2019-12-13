@@ -1,0 +1,5 @@
+package com.capgemini.moduleusecase1.factory;
+
+public class FactoryClass {
+
+}

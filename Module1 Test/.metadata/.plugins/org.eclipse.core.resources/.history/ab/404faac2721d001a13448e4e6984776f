@@ -1,0 +1,15 @@
+package com.capgemini.module1usecase.dao;
+
+public interface ContactDao {
+	
+	public int addContact();
+	
+	public int deleteContact();
+	
+	public void modifyContact();
+	
+	public void searchContact();
+	
+	public void viewAllContact();
+
+}

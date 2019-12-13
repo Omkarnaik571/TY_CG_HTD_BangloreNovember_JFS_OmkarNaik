@@ -1,0 +1,8 @@
+dburl="jdbc:mysql://localhost:3306/contact"
+username="root"
+password="root"
+
+
+
+
+
