@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<display-name>servlets</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<context-param>
+	<param-name>myContextParam</param-name>
+	<param-value>1234</param-value>
+	</context-param>
+	
+	
+
+	<servlet>
+		<servlet-name>currentDate</servlet-name>
+		<servlet-class>com.capgemini.mywebapp.servlets.DateServlet</servlet-class>
+		
+	<init-param>
+	<param-name>MyParam</param-name>
+	<param-value>Welcome To sajjanPur</param-value>
+	</init-param>	
+		
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>currentDate</servlet-name>		                      
+		<url-pattern>/currentDate</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>GetEmployeeServlet</servlet-name>
+		<servlet-class>com.capgemini.mywebapp.servlets.GetEmployeeServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GetEmployeeServlet</servlet-name>		                      
+		<url-pattern>/getEmployee</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>loginFormJsp</servlet-name>
+		<jsp-file>/loginFormJsp.jsp </jsp-file>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>loginFormJsp</servlet-name>		                      
+		<url-pattern>/loginForm</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>searchEmpJsp</servlet-name>
+		<jsp-file>/searchEmpFormJsp.jsp </jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>searchEmpJsp</servlet-name>		                      
+		<url-pattern>/getSingleemployee</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<servlet>
+		<servlet-name>deleteEmployeeJsp</servlet-name>
+		<jsp-file>/DeleteEmployeeJsp.jsp </jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>deleteEmployeeJsp</servlet-name>		                      
+		<url-pattern>/deleteEmpJsp</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>addEmpJsp</servlet-name>
+		<jsp-file>/addEmployeeJsp.jsp </jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>addEmpJsp</servlet-name>		                      
+		<url-pattern>/addEmpJsp</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<servlet>
+		<servlet-name>updateEmpJsp</servlet-name>
+		<jsp-file>/updateemployeeJsp.jsp </jsp-file>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>updateEmpJsp</servlet-name>		                      
+		<url-pattern>/updateEmployeeJsp</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>getAllEmpJsp</servlet-name>
+		<jsp-file>/getAllEmployeeJsp.jsp </jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>getAllEmpJsp</servlet-name>		                      
+		<url-pattern>/getEveryEmployeeJsp</url-pattern>
+	</servlet-mapping>
+	
+	
+
+	
+
+</web-app>
