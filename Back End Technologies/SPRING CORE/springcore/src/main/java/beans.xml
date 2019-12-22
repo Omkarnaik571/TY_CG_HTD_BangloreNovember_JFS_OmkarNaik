@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+   <bean id="hello" class="com.capgemini.springcore.beans.Hello"  >
+   <!-- init-method="init" destroy-method="destroy" -->
+    <property name="msg" value="I Love Java"></property>
+   <property name="count" value="24"></property>
+   
+   
+  
+  <!--  
+  <constructor-arg name="msg" value="I love java"> </constructor-arg>  
+  <constructor-arg name="count" value="18"> </constructor-arg>
+  -->
+   </bean> 
+   
+   
+   
+   <bean id="dog" class="com.capgemini.springcore.beans.Dog" scope="prototype" >
+     
+   </bean>
+   <bean id="cat" class="com.capgemini.springcore.beans.Cat" scope="prototype" >
+     
+   </bean>
+   <bean id="animal" class="com.capgemini.springcore.beans.Cat" scope="prototype" primary="true">
+     
+   </bean> 
+   
+<bean id="bean" class="com.capgemini.springcore.beans.BeanPostProcessorClass" scope="prototype" >
+     
+   </bean>
+   
+  <bean id="factorybean" class="com.capgemini.springcore.beans.BeanFactoryPostProcessorClass" scope="prototype" >
+     
+   </bean>
+     
+   <bean id="pet" class="com.capgemini.springcore.beans.Pet" scope="prototype" autowire="byName"  >
+   
+     <property name="name" value="Jimmy"></property>
+     
+  <!--  <property name="animal" ref="cat" ></property> -->
+   
+  </bean>
+  
+  
+  
+  
+  </beans>
+
+   
+
+
+
