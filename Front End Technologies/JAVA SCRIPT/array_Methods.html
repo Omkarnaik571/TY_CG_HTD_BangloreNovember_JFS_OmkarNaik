@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var technologies=["java-8",null,"Servlets","JDBC","HTML-5","CSS-3","BOOTSTRAP-4","Springs","Hibernate","Java script","Angular "]; 
+    
+    //1 Callback function is required to iterate an array while using for each loop 
+    technologies.forEach((value, index)=>{
+         console.log(value);
+         console.log(index);
+    });
+        console.log(' ');
+    var marks=[10,23,32,31,13,23,33,32]; 
+
+    //pop()  ----------> deletes the last index element from the array
+    marks.pop();   
+    // push()  --------> inserts an element at the end of an array
+    marks.push(40);
+    //shift() ----------> deletes the 1st index element from the array
+    marks.shift();
+    //unshift() ---------> inserts an element at the 0th index of an array
+    marks.unshift(78);
+    marks.forEach((value,index)=>{
+         console.log(value*3, index);
+       }
+       ); 
+       
+
+//Splice(starting index,number of elements to be deleted,Number of elements to be added)
+
+       console.log('Index is = '+marks.indexOf(32));
+             technologies.splice(2,0,'BOOTSTRAP','JAVA SCRIPT','REACT NATIVE');
+     
+             technologies.forEach((value)=>{
+                 console.log(value)
+             }
+
+             );
+
+             var duplicatemarks=[10,23,32,31,13,23,33,32];
+
+
+// Filter() -------------> 
+
+          var filterofmarks=duplicatemarks.filter((value,index,array)=>{  
+            if(array.indexOf(value) === index){
+                   return true;
+              }
+              else{
+                  return false;
+              }
+
+          });
+        
+           for (const i1 of filterofmarks) {
+               console.log(i1);
+           }
+
+
+
+
+        </script>
+     
+
+
+
+
+
+</body>
+</html>

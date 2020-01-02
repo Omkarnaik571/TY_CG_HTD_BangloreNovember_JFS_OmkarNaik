@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+     let message='Good morning folks';
+     //charAt()
+     console.log(message.charAt(7));
+     //charCodeAt()
+     console.log(message.charCodeAt(7));
+
+    //  split() method  -->
+     
+     let splittedMessage=message.split('').reverse().join();
+      console.log(splittedMessage);
+
+     //includes() method -->
+       let sub=message.includes('morning');
+       console.log(sub);
+
+       console.log(message.toUpperCase());
+       console.log(message.toLocaleLowerCase());
+       //
+        console.log(message.substr(0,10));
+
+
+    // -----------Request Paramieter (... variable name)------------------
+
+      function add(...numbers){
+         let sum=0;
+         for (const num of numbers) {
+             sum=sum+num;
+         }
+        return sum;
+      }
+    console.log('Sum of the  numbers is : '+add(12,13,14,13,34));
+    
+    
+      // Object Destructuring 
+      var student={
+          id: 1234,
+          name: "Omkar Naik",
+          age: 22 
+      } 
+     
+       
+     let{id,name,...therest}=student;
+    console.log(id);
+    console.log(therest);
+   
+   //Array Destructuring
+
+   var marks=[20,40,80,90,85];
+   var[maths,physics,chemistry,cs,...rest]=marks;
+       console.log("Maths marks = "+maths);
+       console.log(rest);
+
+
+    </script>
+
+
+
+
+</body>
+</html>
