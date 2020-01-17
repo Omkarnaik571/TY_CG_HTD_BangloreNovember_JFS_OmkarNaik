@@ -1,0 +1,27 @@
+<!-- #addProductForm='ngForm' -->
+<div class="alert alert-success" *ngIf='message'>{{message}}</div>
+<div class="col-md-4 offset-md-2 mt-4">
+    <form #addProductForm='ngForm' (ngSubmit)='addProduct(addProductForm)'>
+     <span class="form-group" >
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" #name='ngModel' ngModel class="form-control " required>
+     </span>
+     <div class="form-group" >
+        <label for="imgurl">Image Url</label>
+        <input type="text" name="imgurl" id="imgurl" #imgurl='ngModel' ngModel class="form-control ">
+     </div>
+     <div class="form-group" >
+        <label for="cost">Cost</label>
+        <input type="text" name="cost" id="cost" #cost='ngModel' ngModel class="form-control ">
+     </div>
+     <button class="btn btn-primary float-right" type="submit">Submit</button>
+    </form>
+        
+</div>
+<div class="card col-md-4 offset-md-7  float-left" style="background-color: #c5c6c7;" >
+    <h4 class="text-center">Add The Product</h4>
+    <img class="card-img-top" style="border-radius: 50%;" height="300px" src="https://cdn.pixabay.com/photo/2018/04/29/11/54/strawberries-3359755_960_720.jpg" alt="">
+ 
+    </div> 
+
+ 

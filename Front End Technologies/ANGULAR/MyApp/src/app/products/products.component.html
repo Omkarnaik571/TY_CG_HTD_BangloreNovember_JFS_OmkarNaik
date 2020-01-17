@@ -1,0 +1,38 @@
+
+<h4 class="alert alert-danger">  {{msg}} </h4>
+<div class="container mt-3">
+
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr >
+                <th>Index</th>
+               <th> Name </th> 
+               <th> Image Url </th>
+               <th>  Price</th>
+               <th>  Delete</th>
+            </tr> 
+        </thead>
+        <tbody>
+          <tr *ngFor='let product of allProducts;index as i'
+          [ngStyle]='{
+              "background-color":product.price < 10000 ?  "green" : "red"
+          }'
+          >
+              <td appColorDirective>  {{i+1}}</td
+                >
+           <td> {{product.name}}</td>
+           <td> {{product.image}}  </td>
+           <td> {{product.price}}</td>
+           <td> <button class="btn btn-danger" (click)='deleteCard(product)'>Delete </button></td>
+          </tr>       
+        </tbody>
+        
+    </table>
+    
+
+</div>
+
+
+
+
+

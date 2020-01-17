@@ -1,0 +1,13 @@
+<p>bikes works!</p>
+
+
+   <div class="col-md-3 float-left">
+       <div class="card card-body" *ngFor='let bike of bikes'>
+        <img  src="{{bike.imgUrl}}" alt="" height="200px" (click)='selectBike(bike)'>
+         <div class="text-centre"> {{bike.name}} </div>      
+       </div>
+   </div> 
+
+
+<app-bike-details  [bikeDetails]='selectedBike'>
+</app-bike-details>

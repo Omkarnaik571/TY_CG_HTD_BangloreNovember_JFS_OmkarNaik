@@ -1,0 +1,15 @@
+div ul  a{
+    font-size: 24px;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    margin-left: 20px;
+    padding-top: 15px;
+}
+div{
+    background-color: tomato;
+    height: 70px;
+}
+div ul{
+    margin-left: 340px;
+}

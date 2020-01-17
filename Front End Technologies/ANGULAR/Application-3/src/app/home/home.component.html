@@ -1,0 +1,9 @@
+<p>home works!</p>
+<div class="col-md-4 offset-4 mt-5">
+<input type="text" class="form-control mb-3" #id placeholder="Enter ID to navigate">
+<input type="text" class="form-control mb-3" #name placeholder="Enter Name to navigate">
+<input type="text" class="form-control mb-3" #imgurl placeholder="Enter Url to navigate">
+<button class="btn btn-primary float-right" (click)='goToId(id.value,name.value,imgurl.value)'>
+Navigate
+</button>
+</div>

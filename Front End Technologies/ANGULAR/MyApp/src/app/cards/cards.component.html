@@ -1,0 +1,15 @@
+<h4 class="alert alert-danger" *ngIf='msg' (click)='click()' >  {{msg}} </h4>
+<div class="col-md-3  float-left mt-3"   *ngFor='let product of allProducts'>
+   <div class="card-header text-centre">
+       {{product.name}}
+   </div>
+  <div class="card-body">
+   <img [src]= "product.image"  width="100%" height="200px" >
+  </div>
+<div class="card-footer">
+{{product.price}}
+<button type="button" class="btn btn-sm btn-danger float-right" (click)='deleteCard(product)'>Delete</button>
+</div>
+</div>
+
+

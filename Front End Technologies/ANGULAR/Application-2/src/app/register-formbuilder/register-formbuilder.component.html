@@ -1,0 +1,73 @@
+<p>register-formbuilder works!</p>
+<div class="col-md-4 offset-md-4 mt-5">
+    <form [formGroup]='registerForm' (ngSubmit)='submitForm()'>
+        <div class="form-group">
+            <label for="name">Full name</label>
+            <input type="text" name="name" id="name" formControlName='name' class="form-control">
+            <div class="text-danger" *ngIf='name.touched && name.invalid'>
+                <div *ngIf='name.errors.required'> *This Field is mandatory </div>
+                <div *ngIf='name.errors.minlength'> *Minimum 5 characters required </div>
+            </div>
+            <!-- End of user name validations field..-->
+        </div>
+        <div class="form-group">
+            <label for="email">E Mail</label>
+            <input type="email" name="email" id="email" formControlName='email' class="form-control">
+            <div class="text-danger" *ngIf='email.touched && email.invalid'>
+                <div *ngIf='email.errors.required'> *E-mail is mandatory </div>
+                <div *ngIf='email.errors.minlength'> *Enter email properly </div>
+            </div>
+            <!-- End of email validations field..-->
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="email" name="password" id="password" formControlName='password' class="form-control">
+            <div class="text-danger" *ngIf='password.touched && password.invalid'>
+                <div *ngIf='password.errors.required'> Password is mandatory </div>
+                <div *ngIf='password.errors.minlength'> Enter password properly </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="age" name="age" id="age" formControlName='age' class="form-control">
+            <div class="text-danger" *ngIf='age.touched && age.invalid'>
+                <div *ngIf='age.errors.required'> Age is mandatory </div>
+                <div *ngIf='age.errors.minlength'> Enter age properly </div>
+                <div *ngIf='age.errors.pattern'> Enter age properly within the paramieter </div>
+            </div>
+        </div>
+        
+        <div fromArrayName='skills'>
+          <div class="mb-3">
+            <span class="h4 text-secondary">Skills</span>
+            <button class="btn btn-sm btn-outline-dark float-right" type="button" (click)='addSkill()'>
+                Add skill
+            </button>
+          </div>
+          <div *ngFor='let control of skills.controls;index as i'>
+           <div class="form-group">
+               <label for="skill{{i+1}}">Skill {{i+1}}</label>
+               <div class="col-md-12 mb-3">
+                 <input type="text" name="skill{{i+1}}" id="" class="form-control col-md-10 float-left"
+                 [formControlName]='i'>
+               <button type="button" class="btn  btn-secondary float-left col-md-2" (click)='deleteSkill(i)'>
+                   &times;
+               </button>
+               </div>
+            <div *ngIf='skills.controls[i].invalid && skills.controls[i].touched'>
+                 <div class="text-danger" *ngIf='control.errors.required'>
+                      *This Field is mandatory
+                 </div>
+                 <div class="text-danger" *ngIf='control.errors.minlength'>
+                     *Minimum 3 characters required
+               </div>
+            </div>
+
+           </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary float-right" (click)='submitForm()'>Register
+        </button>
+
+    </form>
+</div>

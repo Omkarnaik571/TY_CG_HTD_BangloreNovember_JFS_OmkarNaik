@@ -1,0 +1,28 @@
+nav{
+    height: 48px;
+    font-size: 15px;
+    margin: 0px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header nav ul li a{
+    list-style: none;
+    display: inline;
+    margin: 18px;
+    color: white;
+}
+
+#navbar {
+    /* overflow: hidden; */
+    background-color: #2F4F4F;
+    /* position: fixed; */
+    top: 0; 
+    width: 100%;
+  }
+
+  #right1{
+      margin-left: 150px;
+  }
+  #right2{
+    margin-left: 20px;
+}

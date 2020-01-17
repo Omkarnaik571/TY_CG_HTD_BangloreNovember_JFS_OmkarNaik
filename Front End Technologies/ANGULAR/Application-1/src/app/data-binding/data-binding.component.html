@@ -1,0 +1,24 @@
+
+<img [src]="url" alt="crackers" style="width: 40%; height: 300px;" >
+<p
+[style.background]='flag ? "green" : "red"'
+[style.color]='flag? "red" : "green"'
+>
+Style Binding
+</p>
+
+<!-- <p [class.display-4]='flag'
+[style.background]='flag ? "gray" : "lavender"'
+[style.color]='flag? "red" : "blue"'
+>
+Hello World..
+</p> -->
+
+<input type="text" name="twoWaydata" [(ngModel)]='twoWaydata'>
+{{twoWaydata}}
+
+<button  (click)='changeDisplay()' class="btn btn-outline-primary">Click To Change</button>
+
+
+
+     
