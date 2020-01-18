@@ -1,0 +1,23 @@
+<div class="alert alert-danger" *ngIf='msg'>{{msg}}</div>
+<div class="col-md-4 offset-md-4 mt-4" style="margin-bottom: 30px;">
+    <form  #editContractForm='ngForm' (ngSubmit)='updateDetails(editContractForm)'  class="form-signin"> 
+        <h6 class="h3 mb-3 font-weight-normal">Update Contract Details :</h6 >
+        <label for="userId">user Id : </label>
+        <input type="text" name='userId' [(ngModel)]='userId1'  #userId='ngModel' ngModel id="quantity" class="form-control" placeholder="userId" >
+        
+        <label for="id">Id : </label>
+        <input type="text" name='id' [(ngModel)]='id1'  #id='ngModel' ngModel id="deliveryDate" class="form-control" placeholder="id" >
+        
+        <label for="title">Title </label>
+        <input type="text" name='title' [(ngModel)]='title1'  #title='ngModel' ngModel id="title" class="form-control" placeholder="title">
+        <label for="body">Body </label>
+        <input type="text" name='body' [(ngModel)]='body1'  #body='ngModel' ngModel id="body" class="form-control" placeholder="body">
+        <br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Update Details</button>
+        
+      </form>
+</div>
+
+
+
+

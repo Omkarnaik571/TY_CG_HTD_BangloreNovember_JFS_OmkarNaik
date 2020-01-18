@@ -1,0 +1,25 @@
+<div class="alert alert-success" *ngIf='msg'>{{msg}}</div>
+<div class="col-md-4 offset-md-4 mt-4" style="margin-bottom: 30px;">
+    <form  #adContractForm='ngForm' (ngSubmit)='addDetails(adContractForm)'  class="form-signin"> 
+        <h6 class="h3 mb-3 font-weight-normal">Add  Details :</h6 >
+        <label for="contractNo : ">User Id : </label>
+        <input type="text" name='userId' #userId='ngModel' ngModel id="contractNo" class="form-control" placeholder="User Id" required>
+        
+        <label for="customerId : "> Id : </label>
+        <input type="text" name='id' #id='ngModel' ngModel id="customerId" class="form-control" placeholder="Id" required>
+        
+        <label for="productId">Title : </label>
+        <input type="text" name='title' #title='ngModel' ngModel id="productId" class="form-control" placeholder="Title" required>
+        
+        <label for="quantity">Body : </label>
+        <input type="text" name='body' #body='ngModel' ngModel id="quantity" class="form-control" placeholder="Body" >
+        
+        <br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Add Details</button>
+        
+      </form>
+</div>
+
+
+
+

@@ -1,0 +1,15 @@
+<div class="card-group" *ngFor='let singleProduct of product'>
+    <span class="card col-md-3">
+        <img  src="{{singleProduct.image}}" height="300px" width="100%" alt="">
+        <div class="card-body">
+            <p class="card-text">
+             Product Name :{{singleProduct.name}}  
+                <br>
+               Price :  {{singleProduct.price}}
+            </p>
+        </div>
+    </span>
+
+
+</div>
+

@@ -1,0 +1,17 @@
+<table class="table table-bodered col-md-6 offset-md-3" style="margin-top: 70px;">
+    <thead class="bg-dark">
+        <tr style="color: white; font-size: 20px;">
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let singleCustomer of customer'>
+            <td>{{singleCustomer.name}}</td>
+            <td>{{singleCustomer.email}}</td>
+            <td>{{singleCustomer.phone}}</td>
+        </tr>
+    </tbody>
+</table>
+

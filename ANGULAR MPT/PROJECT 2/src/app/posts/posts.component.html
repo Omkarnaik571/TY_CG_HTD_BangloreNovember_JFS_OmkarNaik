@@ -1,0 +1,32 @@
+<div class="alert alert-warning" *ngIf='msg' >{{msg}} </div>
+
+<div class="container mt-4">
+    <table class="col-md-12 offset-md-0 table table-bodered table-hover" style="margin-bottom: 70px;">
+        <thead class="thead" style="background-color: #4f4141; color: white; font-size: 18px;">
+            <tr>
+                <th>User Id </th>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Body</th>
+                <th>Detail operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let singleDetail of detail'>
+                <td >{{singleDetail.userId}}</td>
+                <td>{{singleDetail.id}}</td>
+                <td>{{singleDetail.title}}</td>
+                <td>{{singleDetail.body}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)='deleteDetails(singleDetail)'>Delete</button>
+                    <br><br>
+                    <button class="btn  float-left"  (click)='updateDetails(singleDetail)' style="background-color: #474b4f; color: white;">Update</button>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+  
+  
+  </div>
+
