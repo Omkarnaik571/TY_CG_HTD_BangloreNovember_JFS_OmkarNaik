@@ -1,0 +1,32 @@
+<div class="alert alert-danger" *ngIf='msg'>{{msg}}</div>
+<div class="alert alert-success" *ngIf='successmsg'>{{successmsg}}</div>
+<div class="col-md-4 offset-md-4 mt-4" style="margin-bottom: 30px;">
+    <img class="mb-4" style="margin-left:130px;" src="https://cdn.pixabay.com/photo/2016/01/23/16/02/book-1157658_960_720.png" alt="" width="125" height="125">
+    <form  #adContractForm='ngForm' (ngSubmit)='addContract(adContractForm)'  class="form-signin"> 
+        <h6 class="h3 mb-3 font-weight-normal">Add Contract Details :</h6 >
+        <label for="contractNo : ">Contract Number : </label>
+        <input type="text" name='contractNo' #contractNo='ngModel' ngModel id="contractNo" class="form-control" placeholder="Contract Number" required>
+        
+        <label for="customerId : ">Customer Id : </label>
+        <input type="text" name='customerId' #customerId='ngModel' ngModel id="customerId" class="form-control" placeholder="Customer Id" required>
+        
+        <label for="productId">Product Id : </label>
+        <input type="text" name='productId' #productId='ngModel' ngModel id="productId" class="form-control" placeholder="Product Id" required>
+        
+        <label for="quantity">Quantity : </label>
+        <input type="text" name='quantity' #quantity='ngModel' ngModel id="quantity" class="form-control" placeholder="Quantity" >
+        
+        <label for="deliveryDate">Delivery Date : </label>
+        <input type="date" name='deliveryDate' #deliveryDate='ngModel' ngModel id="deliveryDate" class="form-control" placeholder="Delivery date" >
+        
+        <label for="contractStatus">Contract Status : </label>
+        <input type="text" name='contractStatus' #contractStatus='ngModel' ngModel id="contractStatus" class="form-control" placeholder="Contract status">
+        <br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Add Contract</button>
+        
+      </form>
+</div>
+
+
+
+

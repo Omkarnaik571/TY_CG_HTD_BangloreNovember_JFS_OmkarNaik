@@ -1,0 +1,4 @@
+interface ProductDetails{
+   productId;
+   productName;
+}

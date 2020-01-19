@@ -1,0 +1,27 @@
+<div class="alert alert-success" *ngIf='msg'>{{msg}}</div>
+<div class="container mt-4" style="margin-bottom: 210px;">
+    <table class="col-md-6 offset-md-3 table table-bodered table-hover" style="margin-bottom: 70px;">
+        <thead class="thead" style="background-color: #4f4141; color: white; font-size: 18px;">
+            <tr>
+                <th>User name</th>
+                <th>Password</th>
+                <th>Account Type</th>
+                <th>Account Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let account of allAccounts'>
+                <td >{{account.userName}}</td>
+                <td>{{account.password}}</td>
+                <td>{{account.accountType}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)='deleteUser(account)' >Delete</button>
+                    <button class="btn  float-right"  style="background-color: #474b4f; color: white;" (click)='updateUser(account)'>Update</button>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+  
+  
+  </div>

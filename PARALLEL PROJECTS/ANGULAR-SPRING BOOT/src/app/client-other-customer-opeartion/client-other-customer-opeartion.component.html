@@ -1,0 +1,56 @@
+<div class="alert alert-success" *ngIf='msg' style="font-size: 15px;">{{msg}}</div>
+<div class="alert alert-success" *ngIf='successmsg'>{{successmsg}}</div>
+<div class="col-md-4 offset-md-4 mt-4" style="margin-bottom: 30px;">
+    <form #singleCustomerForm='ngForm' (ngSubmit)='viewsingleCustomer(singleCustomerForm)' class="form-customer">
+        <img class="mb-4" style="margin-left:125px;" src="https://cdn.pixabay.com/photo/2017/09/28/22/43/database-search-2797375_960_720.png" alt="" width="130" height="130">
+        <h6 class="h3 mb-3 font-weight-normal">Search Customer :</h6>
+        <input type="search" name='customerId' #customerId='ngModel' ngModel id="customerId" class="form-control"
+            placeholder="Customer Id" required>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Find Customer</button>
+
+    </form>
+</div>
+
+<div class="container mt-4" style="margin-bottom: 155px;">
+    <table class="col-md-12  table table-bodered table-hover" style="margin-bottom: 70px;">
+        <thead class="thead" style="background-color: #4f4141; color: white; font-size: 17px;">
+            <tr>
+                <th>Customer Id</th>
+                <th>Customer Name</th>
+                <th>Email</th>
+                <th>Postal Code</th>
+                <th>street Address 1</th>
+                <th>Street address 2</th>
+                <th>Telephone Number</th>
+                <th>Town</th>
+                <th>Customer Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let customer of customers'>
+                <td >{{customer.customerId}}</td>
+                <td>{{customer.customerName}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.postalCode}}</td>
+                <td>{{customer.streetAddress1}}</td>
+                <td>{{customer.streetAddress2}}</td>
+                <td>{{customer.telephoneNo}}</td>
+                <td>{{customer.town}}</td>
+
+                <td>
+                    <button class="btn btn-danger" (click)='deleteCustomer(customer)'>Delete</button>
+                    <br><br>
+                    <button class="btn " (click)='updateCustomer(customer)' style="background-color: #474b4f; color: white;" >Update</button>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+  
+  
+  </div>
+
+
+
+

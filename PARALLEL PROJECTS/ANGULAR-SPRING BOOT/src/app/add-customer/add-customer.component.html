@@ -1,0 +1,41 @@
+<div class="alert alert-danger" *ngIf='msg' style="font-size: 20px;">{{msg}}</div>
+        <div class="alert alert-success" *ngIf='successmsg'>{{successmsg}}</div>
+<div class="col-md-4 offset-md-4 mt-4" style="margin-bottom: 30px;">
+    <form #addCustomerForm='ngForm' (ngSubmit)='addCustomer(addCustomerForm)' class="form-customer">
+        <img class="mb-4" style="margin-left:125px;" src="https://cdn.pixabay.com/photo/2016/06/03/15/35/customer-service-1433639_960_720.png" alt="" width="125" height="125">
+        <h6 class="h3 mb-3 font-weight-normal">Add Customer Details :</h6>
+
+        <label for="customerId : ">Customer Id : </label>
+        <input type="text" name='customerId' #customerId='ngModel' ngModel id="customerId" class="form-control"
+            placeholder="Customer Id" required>
+
+        <label for="customerId : ">Customer Name : </label>
+        <input type="text" name='customerName' #customerName='ngModel' ngModel id="customerName" class="form-control"
+            placeholder="Customer Name" required>
+
+        <label for="email">E-Mail : </label>
+        <input type="email" name='email' #email='ngModel' ngModel id="email" class="form-control" placeholder="E-Mail">
+
+        <label for="postalCode">Postal Code : </label>
+        <input type="text" name='postalCode' #postalCode='ngModel' ngModel id="postalCode" class="form-control"
+            placeholder="Postal Code">
+
+        <label for="streetAddress1">Street Address 1 : </label>
+        <input type="text" name='streetAddress1' #streetAddress1='ngModel' ngModel id="streetAddress1"
+            class="form-control" placeholder="Street Address 1">
+
+        <label for="streetAddress2">Street Address 2 : </label>
+        <input type="text" name='streetAddress2' #streetAddress2='ngModel' ngModel id="streetAddress2"
+            class="form-control" placeholder="Street Address 2">
+
+        <label for="telephoneNo">Telephone Number : </label>
+        <input type="text" name='telephoneNo' #telephoneNo='ngModel' ngModel id="telephoneNo"
+            class="form-control" placeholder="Telephone Number">
+        <label for="town">Town : </label>
+        <input type="text" name='town' #town='ngModel' ngModel id="town"
+            class="form-control" placeholder="Town">
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Add Customer</button>
+
+    </form>
+</div>
