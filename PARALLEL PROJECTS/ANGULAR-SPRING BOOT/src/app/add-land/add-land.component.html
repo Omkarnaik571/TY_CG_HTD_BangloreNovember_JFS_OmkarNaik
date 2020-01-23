@@ -1,0 +1,65 @@
+<div class="alert alert-danger" *ngIf='msg'>{{msg}}</div>
+<div class="alert alert-success" *ngIf='successmsg'>{{successmsg}}</div>
+<div class="col-md-4 offset-md-4 mt-4" style="margin-bottom: 30px;">
+    <img class="mb-4" style="margin-left:95px;" src="https://cdn.pixabay.com/photo/2016/03/22/04/23/map-1272165_960_720.png" alt="" width="185" height="125">
+    <form  #adLandForm='ngForm' (ngSubmit)='addLand(adLandForm)'  class="form-signin"> 
+        <h6 class="h3 mb-3 font-weight-normal">Add Land Details :</h6 >
+          
+            <div class="form-group">
+                <label for="plotNumber">Plot Number : </label>
+           <input type="text" name='plotNumber' #plotNumber='ngModel' ngModel id="plotNumber" class="form-control" placeholder="Plot Number" required minlength="1" maxlength="10" pattern="[0-9]+">
+           <div class="validationText" *ngIf='(plotNumber.dirty || plotNumber.touched) && plotNumber.invalid'>
+            <div *ngIf='plotNumber.errors.required'>
+                *This field is mandatory
+            </div>
+            <div *ngIf='plotNumber.errors.minlength'>
+                *minimum 1 number mandatory
+            </div>
+            <div *ngIf='plotNumber.errors.pattern'>
+                *only numbers are allowed
+            </div>
+          </div>    
+        </div>
+       
+        <div class="form-group">
+            <label for="acquiredDate">Acquired Date : </label>
+            <input type="date" name='acquiredDate' #acquiredDate='ngModel' ngModel id="acquiredDate" class="form-control" placeholder="Acquired Date">
+        </div>
+        
+        <div class="form-group">
+            <label for="location">Location : </label>
+            <input type="text" name='location' #location='ngModel' ngModel id="location" class="form-control" placeholder="Location" required minlength="2" maxlength="30">
+            <div class="validationText" *ngIf='(location.dirty || location.touched) && location.invalid'>
+                <div *ngIf='location.errors.required'>
+                        *This field is mandatory
+                </div>
+                <div *ngIf='location.errors.minlength'>
+                    *minimum 2 number mandatory
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="landValue">Land Value : </label>
+            <input type="text" name='landValue' #landValue='ngModel' ngModel id="landValue" class="form-control" placeholder="Land Value" required minlength="5" maxlength="10" pattern="[0-9]+" >
+            <div class="validationText" *ngIf='(landValue.dirty || landValue.touched) && landValue.invalid'>
+                <div *ngIf='landValue.errors.required'>
+                    *This field is mandatory
+                </div>
+                <div *ngIf='landValue.errors.minlength'>
+                    **Minimum 5 digits required
+                </div>
+                <div *ngIf='landValue.errors.pattern'>
+                    *only numbers are allowed
+                </div>
+            </div>  
+        </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Add Land Detail</button>
+        
+      </form>
+</div>
+
+
+
+
+

@@ -1,0 +1,87 @@
+<div class="alert alert-danger" *ngIf='msg'>{{msg}}</div>
+<div class="alert alert-success" *ngIf='successmsg'>{{successmsg}}</div>
+<div class="col-md-4 offset-md-4 mt-4" style="margin-bottom: 30px;">
+    <img class="mb-4" style="margin-left:130px;" src="https://cdn.pixabay.com/photo/2017/09/30/18/53/prognosis-icon-2803190_960_720.png" alt="" width="125" height="125">
+    <form  #adContractForm='ngForm' (ngSubmit)='addContract(adContractForm)'  class="form-signin"> 
+        <h6 class="h3 mb-3 font-weight-normal">Add Contract Details :</h6 >
+        
+            <div class="form-group">
+                <label for="contractNo : ">Contract Number : </label>
+                <input type="text" name='contractNo' #contractNo='ngModel' ngModel id="contractNo" class="form-control"
+                    placeholder="Contract Number" required minlength="1" maxlength="10" pattern="[0-9]+">
+                <div class="validationText" *ngIf='(contractNo.dirty || contractNo.touched) && contractNo.invalid'>
+                    <div *ngIf='contractNo.errors.required'>
+                        *This field is mandatory
+                    </div>
+                    <div *ngIf='contractNo.errors.minlength'>
+                        *minimum 1 number mandatory
+                    </div>
+                    <div *ngIf='contractNo.errors.pattern'>
+                        *only numbers are allowed
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="customerId : ">Customer Id : </label>
+                <input type="text" name='customerId' #customerId='ngModel' ngModel id="customerId" class="form-control"
+                    placeholder="Customer Id" required minlength="1" maxlength="10" pattern="[0-9]+">
+                <div class="validationText" *ngIf='(customerId.dirty || customerId.touched) && customerId.invalid'>
+                    <div *ngIf='customerId.errors.required'>
+                        *This field is mandatory
+                    </div>
+                    <div *ngIf='customerId.errors.minlength'>
+                        *minimum 1 number mandatory
+                    </div>
+                    <div *ngIf='customerId.errors.pattern'>
+                        *only numbers are allowed
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="productId">Product Id : </label>
+                <input type="text" name='productId' #productId='ngModel' ngModel id="productId" class="form-control"
+                    placeholder="Product Id" required minlength="1" maxlength="10" pattern="[0-9]+">
+                <div class="validationText" *ngIf='(productId.dirty || productId.touched) && productId.invalid'>
+                    <div *ngIf='productId.errors.required'>
+                        *This field is mandatory
+                    </div>
+                    <div *ngIf='productId.errors.minlength'>
+                        *minimum 1 number mandatory
+                    </div>
+                    <div *ngIf='productId.errors.pattern'>
+                        *only numbers are allowed
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="quantity">Quantity : </label>
+                <input type="text" name='quantity' #quantity='ngModel' ngModel id="quantity" class="form-control"
+                    placeholder="Quantity" required >
+                    <div class="validationText" *ngIf='quantity.touched && quantity.invalid'>
+                        <div *ngIf='quantity.errors.required'>
+                                *This field is mandatory
+                        </div>
+                </div>
+    
+            </div>
+    
+           
+    
+            <label for="deliveryDate">Delivery Date : </label>
+            <input type="date" name='deliveryDate' #deliveryDate='ngModel' ngModel id="deliveryDate" class="form-control"
+                placeholder="Delivery date">
+
+
+        <br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Add Contract</button>
+        
+      </form>
+</div>
+
+
+
+
+
