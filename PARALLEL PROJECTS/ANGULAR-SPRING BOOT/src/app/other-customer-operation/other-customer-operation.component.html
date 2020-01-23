@@ -1,0 +1,42 @@
+<div class="alert alert-success" *ngIf='message' (click)='deleteMessage()' >{{message}} </div>
+<div class="container mt-4" style="margin-bottom: 155px;">
+    <h3>Customer Details : </h3>
+    <br>
+    <table class="col-md-12  table table-bodered table-hover" style="margin-bottom: 70px;">
+        <thead class="thead" style="background-color: #4f4141; color: white; font-size: 17px;">
+            <tr>
+                <th>Customer Id</th>
+                <th>Customer Name</th>
+                <th>Email</th>
+                <th>Postal Code</th>
+                <th>street Address 1</th>
+                <th>Street address 2</th>
+                <th>Telephone Number</th>
+                <th>Town</th>
+                <th>Customer Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let customer of customers'>
+                <td >{{customer.customerId}}</td>
+                <td>{{customer.customerName}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.postalCode}}</td>
+                <td>{{customer.streetAddress1}}</td>
+                <td>{{customer.streetAddress2}}</td>
+                <td>{{customer.telephoneNo}}</td>
+                <td>{{customer.town}}</td>
+
+                <td>
+                    <button class="btn btn-danger" (click)='deleteCustomer(customer)'>Delete</button>
+                    <br><br>
+                    <button class="btn " (click)='updateCustomer(customer)' style="background-color: #474b4f; color: white;" >Update</button>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+  
+  
+  </div>
+

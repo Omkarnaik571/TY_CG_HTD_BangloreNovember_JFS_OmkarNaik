@@ -1,0 +1,128 @@
+<div class="alert alert-danger" *ngIf='msg' style="font-size: 20px;">{{msg}}</div>
+        <div class="alert " style="background-color: darkgreen;" *ngIf='successmsg'>{{successmsg}}</div>
+<div class="col-md-4 offset-md-4 mt-4" style="margin-bottom: 30px;">
+    <img class="mb-4" style="margin-left:145px;" src="https://cdn.pixabay.com/photo/2017/10/28/00/23/mentor-icon-2895941_960_720.png" alt="" width="100" height="100">
+    <form #editCustomerForm='ngForm' (ngSubmit)='updateCustomer(editCustomerForm)' class="form-customer">
+        <h6 class="h3 mb-3 font-weight-normal">Update Customer No : ({{customerId1}})</h6>
+        <input type="hidden" name='customerId' [(ngModel)]='customerId1' #customerId='ngModel' ngModel id="customerId" class="form-control"
+            placeholder="Customer Id" required>
+        <input type="hidden" name='customerName' [(ngModel)]='customerName1' #customerName='ngModel' ngModel id="customerName" class="form-control"
+            placeholder="Customer Name" required>
+       
+       
+            <div class="form-group">
+                <label for="email">E-Mail : </label>
+                <input type="email" name='email' #email='ngModel' ngModel [(ngModel)]='email1' id="email" class="form-control" placeholder="E-Mail" required>
+                <div class="validationText" *ngIf=' email.invalid && (  email.dirty || email.touched) '>
+                <div *ngIf='email.errors.required'>
+                        *This field is mandatory
+                </div>
+                 </div>
+            </div>
+            
+    
+           <div class="form-group">
+            <label for="postalCode">Postal Code : </label>
+            <input type="text" name='postalCode' #postalCode='ngModel' ngModel [(ngModel)]='postalCode1' id="postalCode" class="form-control"
+                placeholder="Postal Code" minlength="6" maxlength="6" pattern="[0-9]+" required>
+                <div class="validationText"*ngIf='(postalCode.dirty || postalCode.touched) && postalCode.invalid'>
+                                                    <div *ngIf='postalCode.errors.required'>
+                                                            *This field is mandatory
+                                                    </div>
+                                                    <div *ngIf='postalCode.errors.minlength'>
+                                                            *Postal code length should be of 6 digits
+                                                    </div>
+                                                    <div *ngIf='postalCode.errors.pattern'>
+                                                            *only numbers are allowed
+                                                    </div>
+                                            </div>
+    
+           </div>
+    
+           
+    
+           <div class="form-group">
+            <label for="streetAddress1">Street Address 1 : </label>
+            <input type="text" name='streetAddress1' #streetAddress1='ngModel' ngModel [(ngModel)]='streetAddress11' id="streetAddress1"
+                class="form-control" placeholder="Street Address 1" minlength="2" maxlength="45" required>
+                <div class="validationText" *ngIf='(streetAddress1.dirty || streetAddress1.touched) && streetAddress1.invalid'>
+                                                    <div *ngIf='streetAddress1.errors.required'>
+                                                            *This field is mandatory
+                                                    </div>
+                                                    <div *ngIf='streetAddress1.errors.minlength'>
+                                                            *minimum 2 letters mandatory
+                                                    </div>
+                                            </div>
+    
+           </div>
+            
+    
+    
+    <div class="form-group">
+        <label for="streetAddress2">Street Address 2 : </label>
+        <input type="text" name='streetAddress2' #streetAddress2='ngModel' ngModel [(ngModel)]='streetAddress21' id="streetAddress2"
+            class="form-control" placeholder="Street Address 2" minlength="5" maxlength="45">
+            <div class="validationText" *ngIf='(streetAddress2.dirty || streetAddress2.touched) && streetAddress2.invalid'>
+                <div *ngIf='streetAddress2.errors.required'>
+                        *This field is mandatory
+                </div>
+                <div *ngIf='streetAddress2.errors.minlength'>
+                        *minimum 5 characters required
+                </div>
+        </div>
+    </div>
+            
+    
+    
+    
+            <div class="form-group">
+                <label for="telephoneNo">Telephone Number : </label>
+                <input type="text" name='telephoneNo' #telephoneNo='ngModel' ngModel [(ngModel)]='telephoneNo1' id="telephoneNo"
+                    class="form-control" placeholder="Telephone Number" required pattern="[0-9]+" minlength="10" maxlength="10" required>
+                    <div class="validationText"
+                    *ngIf='  telephoneNo.invalid &&(telephoneNo.dirty || telephoneNo.touched)'>
+                    <div *ngIf='telephoneNo.errors.required'>
+                            *This field is mandatory
+                    </div>
+                    <div *ngIf='telephoneNo.errors.pattern'>
+                            *Enter numbers only.
+                    </div>
+                    <div *ngIf='telephoneNo.errors.minlength'>
+                        *Only enter 10 Digit Mobile No
+                </div>
+            </div>
+    
+    
+            </div>
+            
+    
+    <div class="form-group">
+    
+    
+    </div>
+    
+             <div class="form-group">
+                <label for="town">Town : </label>
+                <input type="text" name='town' #town='ngModel' ngModel  [(ngModel)]='town1' id="town"
+                    class="form-control" placeholder="Town" pattern="^[a-zA-Z]+(?: [a-zA-Z]+)*$" minlength="2" required>
+                  <div class="validationText" *ngIf='(town.dirty || town.touched) && town.invalid'>
+                                                        <div *ngIf='town.errors.required'>
+                                                                *This field is mandatory
+                                                        </div>
+                                                        <div *ngIf='town.errors.minlength'>
+                                                                *minimum 2 letters mandatory
+                                                        </div>
+                                                        <div *ngIf='town.errors.pattern'>
+                                                                *only characters are allowed
+                                                        </div>
+                                                </div>
+             </div>
+            
+
+
+
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Update Customer</button>
+
+    </form>
+</div>
