@@ -39,5 +39,40 @@ public class EmpDetails {
 	@OneToOne(cascade = CascadeType.ALL,mappedBy = "employeeDetails")
 	private EmployeeIdentificationDetails identification;
 
+	public int getEmpId() {
+		return empId;
+	}
+
+	public void setEmpId(int empId) {
+		this.empId = empId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<TemporaryAddress> getTempAddress() {
+		return tempAddress;
+	}
+
+	public void setTempAddress(List<TemporaryAddress> tempAddress) {
+		this.tempAddress = tempAddress;
+	}
+
+	public EmployeeIdentificationDetails getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(EmployeeIdentificationDetails identification) {
+		this.identification = identification;
+	}
+
+    	
+	
+	
 	
 }

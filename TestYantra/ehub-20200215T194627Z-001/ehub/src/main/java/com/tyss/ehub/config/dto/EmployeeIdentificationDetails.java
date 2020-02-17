@@ -33,6 +33,48 @@ public class EmployeeIdentificationDetails {
 	@JoinColumn(name = "empId")
 	@JsonIgnore
     private EmpDetails employeeDetails;
+
+	public int getIdentificationId() {
+		return identificationId;
+	}
+
+	public void setIdentificationId(int identificationId) {
+		this.identificationId = identificationId;
+	}
+
+	public String getAadharNo() {
+		return aadharNo;
+	}
+
+	public void setAadharNo(String aadharNo) {
+		this.aadharNo = aadharNo;
+	}
+
+	public String getPanNo() {
+		return panNo;
+	}
+
+	public void setPanNo(String panNo) {
+		this.panNo = panNo;
+	}
+
+	public String getVoterId() {
+		return voterId;
+	}
+
+	public void setVoterId(String voterId) {
+		this.voterId = voterId;
+	}
+
+	public EmpDetails getEmployeeDetails() {
+		return employeeDetails;
+	}
+
+	public void setEmployeeDetails(EmpDetails employeeDetails) {
+		this.employeeDetails = employeeDetails;
+	}
+	
+	
 	
 
 }

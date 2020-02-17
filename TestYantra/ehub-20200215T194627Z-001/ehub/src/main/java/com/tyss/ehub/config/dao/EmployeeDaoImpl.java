@@ -92,6 +92,40 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	}
 
 	
+	@Override
+	public EmployeeIdentificationDetails findEmployeeThroughPan(EmployeeIdentificationDetails employeeIdentificationDetails) {
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		EntityTransaction transaction = entityManager.getTransaction();
+		try {
+			
+			EmployeeIdentificationDetails emp=entityManager.find(EmployeeIdentificationDetails.class, employeeIdentificationDetails.getIdentificationId());
+			
+			return emp;
+		} catch (Exception e) {
+			transaction.rollback();
+			throw new CustomException("exception at dao layer find emp through pan method !!");
+		}
+		
+		
+	}
+	
+	@Override
+	public TemporaryAddress findEmployeeThroughAddressId(TemporaryAddress temporaryAddress) {
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		EntityTransaction transaction = entityManager.getTransaction();
+		try {
+			
+			TemporaryAddress emp=entityManager.find(TemporaryAddress.class, temporaryAddress.getAddressId());
+			
+			return emp;
+		} catch (Exception e) {
+			transaction.rollback();
+			throw new CustomException("exception at dao layer find emo through address method !!");
+		}
+		
+		
+	}
+	
 	
 	
 	

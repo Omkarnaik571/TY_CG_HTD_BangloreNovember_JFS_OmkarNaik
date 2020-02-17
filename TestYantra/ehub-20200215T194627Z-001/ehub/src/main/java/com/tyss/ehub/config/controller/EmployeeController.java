@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tyss.ehub.config.dto.AuthenticationResponse;
 import com.tyss.ehub.config.dto.EmpDetails;
+import com.tyss.ehub.config.dto.EmployeeIdentificationDetails;
+import com.tyss.ehub.config.dto.EmployeeResponse;
+import com.tyss.ehub.config.dto.TemporaryAddress;
 import com.tyss.ehub.config.service.EmployeeServ;
 
 @CrossOrigin(origins = "*" , allowedHeaders = "*", allowCredentials = "true")
@@ -56,4 +59,42 @@ public class EmployeeController {
 	    }
 	     return null;
 	}
+
+	@PostMapping(path = "/searchEmployeePan",produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public EmployeeResponse findEmployeeThroghtPan(@RequestBody EmployeeIdentificationDetails empDetails) {
+		EmployeeResponse response=new EmployeeResponse();
+		
+	    EmployeeIdentificationDetails emp=employeeServ.findEmployeeThroughPan(empDetails);
+	    
+	    if(emp != null) {
+	    response.setStstusCode(200);
+	    response.setMessage("Found !!");
+	    response.setEmployeeName(emp.getEmployeeDetails().getName());
+	    response.setEmpDetails(emp.getEmployeeDetails());
+	    }
+	     return response;
+	}
+
+	
+	@PostMapping(path = "/searchEmployeeAddress",produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public EmployeeResponse findEmployeeThroghtAddress(@RequestBody TemporaryAddress temporaryAddress) {
+		EmployeeResponse response=new EmployeeResponse();
+		
+		String temp=temporaryAddress.getCity().trim();
+		if(temp.isEmpty()) {
+			response.setStstusCode(200);
+		    response.setMessage("There is no content present inside the object !!");
+		    return response;
+		}
+	    TemporaryAddress emp=employeeServ.findEmployeeThroughAddressId(temporaryAddress);
+	    
+	    if(emp != null) {
+	    response.setStstusCode(200);
+	    response.setMessage("Found !!");
+	    response.setEmployeeName(emp.getEmpDetails().getName());
+	    response.setEmpDetails(emp.getEmpDetails());
+	    }
+	     return response;
+	}
+
 }

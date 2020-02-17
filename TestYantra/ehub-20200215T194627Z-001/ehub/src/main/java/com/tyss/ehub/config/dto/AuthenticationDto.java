@@ -23,6 +23,30 @@ public class AuthenticationDto {
 	private String password;
 	@Column
 	private String accountType;
+	public int getAuthenticationID() {
+		return authenticationID;
+	}
+	public void setAuthenticationID(int authenticationID) {
+		this.authenticationID = authenticationID;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getAccountType() {
+		return accountType;
+	}
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
 	
 	
 	

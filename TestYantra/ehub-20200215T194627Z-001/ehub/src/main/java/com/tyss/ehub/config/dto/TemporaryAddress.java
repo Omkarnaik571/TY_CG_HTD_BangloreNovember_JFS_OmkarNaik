@@ -35,5 +35,48 @@ public class TemporaryAddress {
 	@JoinColumn(name = "empId")
 	@JsonIgnore
 	private EmpDetails empDetails;
+
+	public int getAddressId() {
+		return addressId;
+	}
+
+	public void setAddressId(int addressId) {
+		this.addressId = addressId;
+	}
+
+	public String getStreet() {
+		return street;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+
+	public String getZip() {
+		return zip;
+	}
+
+	public void setZip(String zip) {
+		this.zip = zip;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public EmpDetails getEmpDetails() {
+		return empDetails;
+	}
+
+	public void setEmpDetails(EmpDetails empDetails) {
+		this.empDetails = empDetails;
+	}
+	
+	
+	
 	
 }
